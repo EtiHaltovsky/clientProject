@@ -1,9 +1,9 @@
 // import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 // import Log from './Log'
 // // import React from 'react';
 // import Connect from './Connect';
-// import RegistrationForm from './RegistrationForm';
+import RegistrationForm from './RegistrationForm';
 // import { Image } from '@react-navigation/native';
 // import Chart from './Chart';
 
@@ -59,17 +59,17 @@ import axios from 'axios'
 function App() {
   const [details, setDetails] = useState([]);//שיכניס את הנתונים למערך - בעצם שיכניס למשתנה את כל האוביקט
   const [request, setRequest] = useState();//משתנה כדי לוודא האם היתה גישה לסרוויס
-  
+
   /*connect to service - node - גישה לסרוויס */
   const getRequestHandler = async () => {
     const response = await axios.get('http://localhost:3001/ravkav')
-    .then((response) => {
-      setDetails(response.data[0].ravkavId);
-      setRequest("GET");
-      console.log("Success!!!!!!!!",response)
-  });
-  /* */
-    
+      .then((response) => {
+        setDetails(response.data[0].ravkavId);
+        setRequest("GET");
+        console.log("Success!!!!!!!!", response)
+      });
+    /* */
+
   };
   return (
     <div className="App">
@@ -77,6 +77,11 @@ function App() {
       <button onClick={() => getRequestHandler()} >connect to node that works!😂😁</button>
       <hr />{/* הצגת הנתונים בעמידה בתנאי */}
       {request == "GET" ? <span> {details} Get!!!!!</span> : <span>None</span>}
+      <View>
+        <Text>Open up App.js to start working on your app!</Text> 
+        <RegistrationForm />
+        {/* <StatusBar style="auto" /> */}
+      </View>
     </div>
   );
 }

@@ -46,7 +46,7 @@
 
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native';
-import Img from './assets/propfil.png';
+// import Img from './assets/propfil.png';
 
 const VolunteerRegistrationForm = () => {
   const [name, setName] = useState('');
@@ -66,7 +66,7 @@ const VolunteerRegistrationForm = () => {
     <View>
       <View style={{ backgroundColor: 'red' }}>
         <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white', textAlign: 'center' }}>מתחברים למתנדבים</Text>
-        <Image source={Img} style={{ width: 50, height: 50, alignSelf: 'center' }} />
+        {/* <Image source={Img} style={{ width: 50, height: 50, alignSelf: 'center' }} /> */}
         <Text>מתנדב</Text>
       </View>
       <TextInput placeholder="שם" value={name} onChangeText={setName} />
@@ -87,15 +87,17 @@ const VolunteerRegistrationForm = () => {
         <Picker.Item label="דתי" value="דתי" />
       </Picker> */}
 
-      <Picker
+      {/* <Picker
         selectedValue={volunteeringArea}
         onValueChange={(itemValue) => setVolunteeringArea(itemValue)}
       >
         <Picker.Item label="תחום התנדבות" value="" />
         <Picker.Item label="הסעות חולים" value="הסעות חולים" />
         <Picker.Item label="גיהוץ" value="גיהוץ" />
-        <Picker.Item label="העברת חבילות"/>
-        </Picker>
+        <Picker.Item label="העברת חבילות" value="העברת חבילות" />
+        </Picker> */}
+
+        
         <TouchableOpacity style={{ backgroundColor: 'green', padding: 10, marginTop: 10 }} onPress={handleSubmit}>
         <Text style={{ color: 'white', fontWeight: 'bold', textAlign: 'center' }}>אישור</Text>
       </TouchableOpacity>
