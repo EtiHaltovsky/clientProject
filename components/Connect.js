@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, Image } from 'react-native';
-import Img from './assets/propfil.png';
+import { TouchableOpacity } from 'react-native';
+
+// import Img from './assets/propfil.png';
 const LoginScreen = () => {
   return (
     <View style={styles.container}>
-      <Image source={Img} style={styles.image} />
+      {/* <Image source={Img} style={styles.image} /> */}
       <View style={styles.inputContainer}>
         <View style={styles.inputWrapper}>
           <Text style={styles.label}>שם משתמש:</Text>
@@ -14,6 +16,12 @@ const LoginScreen = () => {
           <Text style={styles.label}>סיסמא:</Text>
           <TextInput style={styles.input} placeholder="סיסמא" secureTextEntry={true} />
         </View>
+      <View style={styles.buttonContainer}>
+      
+        <TouchableOpacity>
+         <Text>אישור</Text>
+         </TouchableOpacity>
+        </View>    
       </View>
     </View>
   );
